@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>All Questions</h2>
+<ul>
+  {% for q in questions %}
+    <li>
+      <strong>{{ q.author }}</strong>: {{ q.content }} <br>
+      <a href="/answer/{{ q.id }}/">Answer</a>
+    </li>
+  {% empty %}
+    <li>No questions yet.</li>
+  {% endfor %}
+</ul>
+<a href="/question/ask/">Ask a Question</a>
+{% endblock %}
