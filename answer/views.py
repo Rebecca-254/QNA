@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
+
 from .forms import AnswerForm
 from .models import Answer
 from question.models import Question
+
 
 def question_detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
@@ -20,3 +22,8 @@ def question_detail(request, question_id):
         'answers': answers,
         'form': form
     })
+
+
+def all_answers(request):
+    answers = Answer.objects.all()
+    return render(request, 'answer/all.html', {'answers': answers})

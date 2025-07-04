@@ -2,11 +2,14 @@
 
 {% block content %}
 
-h2>What's your Question?</h2>
+<h2>What's your Question?</h2>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Submit Question</button>
 </form>
+ <div class="card">
+    <p>Have a question? Ask away!</p>
 <a href="/question/">Back to Questions</a>
+</div>
 {% endblock %}

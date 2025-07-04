@@ -8,7 +8,9 @@
 <h3>Answers</h3>
 <ul>
   {% for a in answers %}
+  <div class="card"></div>
     <li><strong>{{ a.responder }}</strong>: {{ a.content }}</li>
+    </div>
   {% empty %}
     <li>No answers yet.</li>
   {% endfor %}

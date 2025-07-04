@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Answers</h2>
+<ul>
+  {% for a in answers %}
+    <li><strong>{{ a.responder }}</strong>: {{ a.content }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

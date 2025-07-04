@@ -5,10 +5,12 @@
 <h2>All Questions</h2>
 <ul>
   {% for q in questions %}
+   <div class="card">
     <li>
       <strong>{{ q.author }}</strong>: {{ q.content }} <br>
       <a href="/answer/{{ q.id }}/">Answer</a>
     </li>
+    </div>
   {% empty %}
     <li>No questions yet.</li>
   {% endfor %}
